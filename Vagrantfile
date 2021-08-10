@@ -18,4 +18,7 @@ Vagrant.configure("2") do |config|
       > /var/spool/cron/crontabs/root
   SHELL
 
+  config.vm.provision "shell", run: "always",
+    inline: "ip route add default via 192.168.5.1"
+
 end
